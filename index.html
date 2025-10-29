@@ -1,57 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🌸 Nakaema Portfolio 🌸</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🌸 なかえまの小さな庭 — Portfolio & Blog</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><text y=%2250%25%22 x=%2250%25%22 text-anchor=%22middle%22 font-size=%2232%22>🌸</text></svg>">
 </head>
 <body>
-  <header>
-    <h1>🌸 Nakaema Portfolio 🌸</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#works">Works</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="page-wrap">
+    <header class="site-header">
+      <div class="inner header-inner">
+        <h1 class="site-title">🌸 なかえまの小さな庭</h1>
+        <p class="tagline">かわいいものと技術をゆるっと共有するブログ兼ポートフォリオ</p>
+        <nav class="main-nav">
+          <a href="#about">About</a>
+          <a href="#blog">Blog</a>
+          <a href="#works">Works</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>🌷こんにちは、なかえまです。インフラやクラウドを勉強しながら、好きなものを詰め込んでいます。</p>
-  </section>
+    <main class="inner">
+      <!-- About -->
+      <section id="about" class="card about-card">
+        <div class="avatar">🌷</div>
+        <h2>こんにちは、なかえまです</h2>
+        <p class="lead">
+          インフラ系を中心にクラウドとツールを学んでいます。Neovimと可愛いテーマが好き。ここでは技術メモと好きなものをゆるっとまとめています。
+        </p>
+        <div class="skill-list">
+          <span>🐧 Linux / WSL2</span>
+          <span>☁️ Azure</span>
+          <span>📝 Excel</span>
+          <span>🐟 fish / Starship</span>
+          <span>🧰 Neovim / tmux</span>
+        </div>
+      </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>💻 Linux / WSL2</li>
-      <li>🐟 fish shell</li>
-      <li>🌟 Starship prompt</li>
-      <li>📝 Neovim / LazyVim</li>
-      <li>🔧 Tmux</li>
-      <li>🌐 HTML / CSS / JS</li>
-    </ul>
-  </section>
+      <!-- Blog -->
+      <section id="blog" class="card">
+        <h2>Latest Posts</h2>
+        <div class="posts" id="posts">
+          <!-- JS will inject sample cards if none -->
+        </div>
+        <a class="more" href="#blog">もっと見る →</a>
+      </section>
 
-  <section id="works">
-    <h2>Works</h2>
-    <div class="work-grid">
-      <div class="work-card">🎨 Project 1</div>
-      <div class="work-card">💡 Project 2</div>
-      <div class="work-card">🚀 Project 3</div>
-    </div>
-  </section>
+      <!-- Works -->
+      <section id="works" class="card">
+        <h2>Works</h2>
+        <div class="grid" id="works-grid">
+          <article class="work">
+            <div class="work-thumb">💡</div>
+            <h3>Azure 冗長構成検証</h3>
+            <p>東西リージョンでフェールオーバーを確認した記録と学び。</p>
+          </article>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:nakaema@example.com">nakaema@example.com</a></p>
-  </section>
+          <article class="work">
+            <div class="work-thumb">🧮</div>
+            <h3>Excel 自動集計ツール</h3>
+            <p>COUNTIFS とマクロ少々で自治体向け集計を自動化。</p>
+          </article>
 
-  <footer>
-    <p>© 2025 Nakaema 🌸</p>
-  </footer>
+          <article class="work">
+            <div class="work-thumb">🎨</div>
+            <h3>Neovim カスタム設定</h3>
+            <p>Catppuccin と LazyVim を使ったかわいい設定集。</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+        <p>気軽にご連絡ください。</p>
+        <ul class="contact-list">
+          <li>📧 <a href="mailto:nakaema@example.com">nakaema@example.com</a></li>
+          <li>🐙 <a href="https://github.com/emachan92-dotcom" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="inner">
+        <small>© <span id="year"></span> なかえま 🌸 — Made with Neovim & lots of pastel</small>
+      </div>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
